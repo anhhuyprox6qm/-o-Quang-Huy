@@ -1,0 +1,6 @@
+C:\Users\asus\RiderProjects\Session01\Bai2\bin\Debug\Bai2.exe
+C:\Users\asus\RiderProjects\Session01\Bai2\bin\Debug\Bai2.pdb
+C:\Users\asus\RiderProjects\Session01\Bai2\obj\Debug\Bai2.csprojAssemblyReference.cache
+C:\Users\asus\RiderProjects\Session01\Bai2\obj\Debug\Bai2.csproj.CoreCompileInputs.cache
+C:\Users\asus\RiderProjects\Session01\Bai2\obj\Debug\Bai2.exe
+C:\Users\asus\RiderProjects\Session01\Bai2\obj\Debug\Bai2.pdb
