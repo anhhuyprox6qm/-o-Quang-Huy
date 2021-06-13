@@ -5,18 +5,28 @@ namespace Lab3_1
      {
         public static void Main(string[] args)
         {
-             Atom atom = new Atom();
-             while (true)
-             {
-                atom.Accept();
-                Console.WriteLine("Chon 1 tiep tuc chon 2 de dung");
-                int choice = int.Parse(Console.ReadLine());
-                if (choice != 1)
+             var atoms = new Atom[10];
+            Console.WriteLine("Atomic Information");
+            Console.WriteLine("==================");
+            var count = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                var atom = new Atom();
+                var result = atom.Accept();
+                if (!result || atom.Number == 0)
                 {
                     break;
-                 }
-             }
-            atom.Display();
+                }
+                atoms[i] = atom;
+                count++;
+            }
+
+            Console.WriteLine("No Sym Name Weight");
+            Console.WriteLine("------------------------------------");
+            for (int i = 0; i < count; i++)
+            {
+                atoms[i].Display();
+            }
         }
     }
 }
