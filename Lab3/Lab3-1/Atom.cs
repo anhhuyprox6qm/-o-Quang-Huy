@@ -7,41 +7,37 @@ namespace Lab3_1
     {
         public int Number { get; set; }
         public string Symbol { get; set; }
-        public string Fullname { get; set; }
-        public double Weight { get; set; }
-        private List<Atom> _listAtomic = new List<Atom>();
-
+        public string FullName { get; set; }
+        public float Weight { get; set; }
+        
         public bool Accept()
         {
-            Console.WriteLine("Enter atomic number : ");
-            this.Number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter symbol : ");
-            this.Symbol = Console.ReadLine();
-            Console.WriteLine("Enter full name : ");
-            this.Fullname = Console.ReadLine();
-            Console.WriteLine("Enter atomic weight : ");
-            this.Weight = Convert.ToDouble(Console.ReadLine());
-            _listAtomic.Add(this);
-            return true;
+            try
+            {
+                Console.WriteLine("Enter atomic number: ");
+                this.Number = Convert.ToInt32(Console.ReadLine());
+                if (this.Number == 0)
+                {
+                    return false;
+                }
+                Console.WriteLine("Enter symbol: ");
+                this.Symbol = Console.ReadLine();
+                Console.WriteLine("Enter full name: ");
+                this.FullName = Console.ReadLine();
+                Console.WriteLine("Enter atomic weight: ");
+                this.Weight = float.Parse(Console.ReadLine());
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return false;
         }
 
         public void Display()
         {
-            for (int i = 0; i < _listAtomic.Count; i++)
-            {
-                Atom atom = _listAtomic[i];
-                Console.WriteLine($"{Number},{Symbol},{Fullname},{Weight}");
-                if (_listAtomic.Count>10)
-                {
-                    Console.WriteLine("Only get up to 10 elements!");
-                    break;
-                    int choice = int.Parse(Console.ReadLine());
-                    if (choice !=1)
-                    {
-                        
-                    }
-                }
-            }
+            Console.WriteLine($"{this.Number} {this.Symbol} {this.FullName} {this.Weight}");
         }
     }
    
