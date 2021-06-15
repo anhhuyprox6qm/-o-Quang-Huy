@@ -1,39 +1,27 @@
-﻿using System;
-
+using System;
 namespace Lab4
 {
-    public class Faculty: Employee
+    public class Faculty : Employee
     {
-        public string OfficeHour { get; set; }
+        public string OfficeHours { get; set; }
         public int Rank { get; set; }
-
-        public override string ToString()
+        public override double CalculateBonus()
         {
-            return $"Name: {Name}, Phone: {Phone}, Address: {Address}, Email: {Email}, Department: {Department}, Salary: {Salary}, DateHied: {DateHied}, OfficeHour: {OfficeHour}, Rank: {Rank}";
+            return 1000 + 0.05 * Salary;
         }
-
-        public override double CalculBonus()
+        public override int CalculateVacation()
         {
-            double result;
-            result = Salary * 0.05 + 1000;
-            return result;
-        }
-
-        public override void CalculateVacation()
-        {
-            Console.WriteLine("Vui long nhap so nam lam viec:");
-            int year = Convert.ToInt32(Console.ReadLine());
-            if (year>3 && Rank == 1)
+            if (DateHired > 3 && Rank == 1)
             {
-                Console.WriteLine("Duoc nghi phep 6 tuan.");
+                return 6;
             }
-            else if (year>3)
+            else if(DateHired > 3 && Rank != 1)
             {
-                Console.WriteLine("Duoc nghi phep 5 tuan.");
+                return 5;
             }
             else
             {
-                Console.WriteLine("Duoc nghi phep 4 tuan.");
+                return 4;
             }
         }
     }
